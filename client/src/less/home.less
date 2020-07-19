@@ -1,0 +1,135 @@
+// out: ../css/home.css, compress: true, sourceMap: false
+.page#home {
+  padding-bottom: 2em;
+  section {
+      width: 100%;
+      max-width: 800px;
+      margin: 1em auto;
+      padding: 0 1em;
+      &#hero {
+          height: 40vh;
+          width: 100%;
+          text-align: center;
+          font-size: 2em;
+          font-weight: bold;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+      }
+      &#donnations {
+          max-width: 400px;
+          margin: 1em auto;
+          & > div {
+              flex-direction: row;
+              display: flex;
+              background: rgba(255,255,255,.2);
+              border-radius: 1em;
+              padding: 1em;
+              margin: 0 1em;
+              align-items: center;
+              cursor: pointer;
+              #icon {
+                  font-size: 3em;
+                  padding: 0 .25em;
+              }
+              #text {
+                  display: flex;
+                  flex-direction: column;
+                  h2 {
+                      font-size: 1.5em;
+                      margin: 0 0 .25em 0;
+                  }
+              }
+          }
+      }
+      &#buttons {
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          justify-content: center;
+          padding: 1em;
+          a.btn {
+              // border: 1px solid white;
+              border-radius: 4px;
+              display: flex;
+              flex-direction: column;
+              margin: .5em;
+              padding: 1em;
+              max-width: 120px;
+              flex-grow: 1;
+              text-decoration: none;
+              color: white;
+              &:hover {
+                  background: rgba(255,255,255,.2);
+              }
+              span {
+                  text-align: center;
+                  &.txt {
+                      text-transform: uppercase;
+                      font-weight: bold;
+                      margin-top: 1em;
+                      font-size: .9em;
+                  }
+                  &.icon {
+                      font-size: 3em;
+                  }
+              }
+          }
+      }
+      &#noticias {
+          padding-bottom: 2em;
+          div#carrousel {
+              display: flex;
+              flex-direction: row;
+              overflow-x: scroll;
+              flex-wrap: nowrap;
+              height: 300px;
+              .noticia {
+                  max-width: 600px;
+                &:first-of-type {
+                    margin-left: 0;
+                  }
+                &:last-of-type {
+                    margin-right: 0;
+                  }
+                  overflow: hidden;
+                  height: 100%;
+                  width: 90%;
+                  background: grey;
+                  color: white;
+                  text-decoration: none;
+                  margin: 0 .5em;
+                  display: flex;
+                  flex-direction: column;
+                  justify-content: flex-end;
+                  position: relative;
+                  flex-shrink: 0;
+                  .img {
+                      position: absolute;
+                      height: 100%;
+                      z-index: 0;
+                      width: 100%;
+                      background-size: cover;
+                  }
+                  div.txt {
+                      z-index: 1;
+                      background: rgba(0,0,0,.5);
+                      padding: .5em;
+                      display: flex;
+                      flex-direction: column;
+                  }
+                  .title {
+                      font-weight: bold;
+                      font-size: 1.5em;
+                  }
+              }
+          }
+          & > a {
+              display: block;
+              width: 100%;
+              padding: .5em;
+              text-align: center;
+          }
+      }
+  }
+}

@@ -1,0 +1,47 @@
+// out: ../css/navigation.css, compress: true, sourceMap: false
+nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  &.nav-desktop {
+    @media screen and (max-width: 599px) {
+      display: none;
+    }
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1em 1em;
+    font-weight: bold;
+    a {
+      line-height: 2em;
+      padding: 0 1em;
+    }
+    div#links {
+      display: flex;
+      flex-direction: row;
+    }
+    h1 {
+      display: none;
+    }
+  }
+  &.nav-mobile {
+    @media screen and (min-width: 600px) {
+      display: none;
+    }
+    button {
+      background: none;
+      border: none;
+      color: inherit;
+      font-size: 1.5em;
+      height: 100%;
+      padding: 0 .5em 0 1em;
+      cursor: pointer;
+    }
+    h1 {
+      font-size: 1.5em;
+      flex-grow: 1;
+      text-align: left;
+      margin-left: 1em;
+    }
+  }
+}

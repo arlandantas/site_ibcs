@@ -1,0 +1,57 @@
+version: '3'
+
+# ibcs / aYgYVB@r(raGDF1dU5
+
+services:
+  httpd:
+    image: httpd:2.4.43-alpine
+    volumes:
+      - ./client/build:/usr/local/apache2/htdocs/
+      # - .:/usr/local/apache2/htdocs/
+    ports:
+      - 80:80
+
+  node:
+    image: node:13.12.0-alpine3.11
+    working_dir: /home/node/app
+    volumes:
+      - ./client:/home/node/app
+    ports:
+      - 3000:3000
+    command: "npm run build"
+    networks:
+      - frontend
+      - backend
+    # links: 
+    #   - php
+    # depends_on:
+    #   - php
+
+  # wordpress:
+  #   image: wordpress:5.4.2-php7.2-apache
+  #   volumes:
+  #     - ./wordpress:/var/www/html
+  #   ports:
+  #     - 8080:80
+  #   environment:
+  #     - WORDPRESS_DB_HOST=mysql
+  #     - WORDPRESS_DB_USER=root
+  #     - WORDPRESS_DB_PASSWORD=root
+  #     - WORDPRESS_DB_NAME=wp_ibcs
+  #     - WORDPRESS_DB_TABLE_PREFIX=wp_
+
+  # mysql:
+  #   image: mysql:5.7
+  #   volumes:
+  #     - ./data:/var/lib/mysql
+  #   environment:
+  #     - MYSQL_DATABASE=wp_ibcs
+  #     - MYSQL_USER=root
+  #     - MYSQL_PASSWORD=root
+  #     - MYSQL_ROOT_PASSWORD=root
+  #   command: --default-authentication-plugin=mysql_native_password
+
+networks:
+  backend:
+    internal: true
+  frontend:
