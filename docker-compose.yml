@@ -6,8 +6,7 @@ services:
   httpd:
     image: httpd:2.4.43-alpine
     volumes:
-      - .:/usr/local/apache2/htdocs/
-      - ./httpd.conf:/usr/local/apache2/conf/httpd.conf
+      - ./client/build:/usr/local/apache2/htdocs/
       # - .:/usr/local/apache2/htdocs/
     ports:
       - 80:80
