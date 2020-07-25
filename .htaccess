@@ -1,0 +1,12 @@
+RewriteEngine On
+Options FollowSymLinks
+
+# RewriteBase "/api"
+RewriteCond %{REQUEST_URI} "^/api(.*)$"
+RewriteRule "^api(.*)$" "/server/$1" [L]
+
+RewriteCond %{DOCUMENT_ROOT}/client/dist/%{REQUEST_URI} -f
+RewriteRule ^(.+) /client/dist/$1 [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)$  "/index.html"

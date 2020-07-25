@@ -48,7 +48,7 @@ export default function () {
             </div>
         </section>
         <section id="buttons">
-            <a className="btn" href="#/">
+            <a className="btn" href="#/igreja">
                 <span className="icon"><i className="fas fa-church"></i></span>
                 <span className="txt">igreja</span>
             </a>
