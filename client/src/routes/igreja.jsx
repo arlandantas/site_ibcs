@@ -15,12 +15,9 @@ class Noticia extends React.Component {
   }
   render () {
     return (
-      <div className="page" id="noticia">
-        <Navigation titulo={`IBCS`} />
-        <section className="content">
-          Aqui contaremos a história da igreja
-        </section>
-      </div>
+      <Navigation titulo={`Nossa IBCS`} id="igreja">
+        Aqui vai a historia da igreja
+      </Navigation>
     );
   }
 }

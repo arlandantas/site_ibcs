@@ -1,4 +1,7 @@
 // out: ../css/navigation.css, compress: true, sourceMap: false
+
+@content-width: 800px;
+
 nav {
   display: flex;
   flex-direction: row;
@@ -42,6 +45,15 @@ nav {
       flex-grow: 1;
       text-align: left;
       margin-left: 1em;
+    }
+  }
+}
+.page > .content {
+  & > .title_desktop {
+    text-align: center;
+    margin: 1em auto;
+    @media screen and (max-width: 599px) {
+      display: none;
     }
   }
 }

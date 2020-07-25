@@ -1,9 +1,19 @@
 import React from 'react';
+// import logo from './logo.svg';
 import '../css/navigation.css';
+
+// import {
+//   HashRouter as Router,
+//   Switch,
+//   Route,
+//   Link,
+//   useRouteMatch,
+//   useParams
+// } from "react-router-dom";
 
 export default function (props) {
   return (
-    <div className="page" id={props.id}>
+    <React.Fragment>
       <nav className="nav-mobile">
         <button id="back" onClick={() => window.history.go(-1)}>
           <i className="fas fa-arrow-left"></i>
@@ -15,14 +25,9 @@ export default function (props) {
         <div id="links">
           <a href="#/">Home</a>
           <a href="#/noticias">Notícias</a>
-          <a href="#/igreja">Sobre</a>
-          <a href="#/contribua">Contribua</a>
         </div>
+        <h1>{props.titulo || 'IBCS'}</h1>
       </nav>
-      <section className="content">
-        { !props.hideTitleDesktop ? (<h1 className="title_desktop">{props.titulo || 'IBCS'}</h1>) : '' }
-        { props.children }
-      </section>
-    </div>
+    </React.Fragment>
   );
 }

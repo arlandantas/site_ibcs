@@ -1,16 +1,6 @@
 import React from 'react'
-// import logo from './logo.svg'
 import Navigation from '../components/navigation'
 import '../css/noticia.css'
-
-// import {
-//   HashRouter as Router,
-//   Switch,
-//   Route,
-//   Link,
-//   useRouteMatch,
-//   useParams
-// } from "react-router-dom";
 
 class Noticia extends React.Component {
   constructor (props) {
@@ -25,9 +15,7 @@ class Noticia extends React.Component {
   }
   render () {
     return (
-      <div className="page" id="noticia">
-        <Navigation titulo={`IBCS`} />
-        <section className="content">
+      <Navigation titulo={`IBCS`} id="noticia" hideTitleDesktop>
         {
           this.state.carregando ?
           <div id="loading">
@@ -43,8 +31,7 @@ class Noticia extends React.Component {
             </div>
           </React.Fragment>
         }
-        </section>
-      </div>
+      </Navigation>
     );
   }
 }
