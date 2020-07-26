@@ -11,10 +11,10 @@ export default function (props) {
         <h1>{props.titulo || 'IBCS'}</h1>
       </nav>
       <nav className="nav-desktop">
-        <a id="logo" href="#/">IBCS</a>
+        <a id="logo" href="#/"><img src="imgs/logo_small.png" alt="IBCS"/></a>
         <div id="links">
-          <a href="#/">Home</a>
-          <a href="#/noticias">Notícias</a>
+          {/* <a href="#/">Home</a> */}
+          {/* <a href="#/noticias">Notícias</a> */}
           <a href="#/igreja">Sobre</a>
           <a href="#/contribua">Contribua</a>
         </div>

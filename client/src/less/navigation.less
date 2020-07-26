@@ -16,15 +16,17 @@ nav {
     padding: 1em 1em;
     font-weight: bold;
     a {
-      line-height: 2em;
       padding: 0 1em;
+      &#logo {
+        img {
+          width: auto;
+          height: 50px;
+        }
+      }
     }
     div#links {
       display: flex;
       flex-direction: row;
-    }
-    h1 {
-      display: none;
     }
   }
   &.nav-mobile {

@@ -1,15 +1,5 @@
 import React from 'react';
-// import logo from './logo.svg';
 import '../css/home.css';
-
-// import {
-//   HashRouter as Router,
-//   Switch,
-//   Route,
-//   Link,
-//   useRouteMatch,
-//   useParams
-// } from "react-router-dom";
 
 export default function () {
 
@@ -52,7 +42,7 @@ export default function () {
   return (
     <div className="page" id="home">
         <section id="hero">
-            <h1>Igreja Batista em Cidade Serodio</h1>
+            <img src="imgs/logo.png" alt="Igreja Batista em Cidade Serodio"/>
         </section>
         <section id="donnations">
             <div>
