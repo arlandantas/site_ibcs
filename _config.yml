@@ -1,2 +1,2 @@
 theme: jekyll-theme-cayman
-source: ./client/dist
+source: client/dist
