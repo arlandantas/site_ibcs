@@ -1,13 +1,12 @@
 // out: ../css/home.css, compress: true, sourceMap: false
 .page#home {
-  padding-bottom: 2em;
   section {
       width: 100%;
       max-width: 800px;
       margin: 1em auto;
       padding: 0 1em;
       &#hero {
-          height: 40vh;
+          min-height: 40vh;
           width: 100%;
           text-align: center;
           font-size: 2em;
@@ -48,6 +47,8 @@
           flex-wrap: wrap;
           justify-content: center;
           padding: 1em;
+          height: max-content;
+          min-height: max-content;
           a.btn {
               // border: 1px solid white;
               border-radius: 4px;
@@ -59,6 +60,7 @@
               flex-grow: 1;
               text-decoration: none;
               color: white;
+              height: max-content;
               &:hover {
                   background: rgba(255,255,255,.2);
               }
@@ -77,13 +79,16 @@
           }
       }
       &#programacao {
+        & > h2 {
+          margin-top: 0;
+        }
         ul {
           display: flex;
           flex-direction: row;
           list-style: none;
           flex-wrap: wrap;
           padding: 0;
-          margin-top: -.5em;
+          margin: -.5em auto 0;
           li {
             width: 300px;
             display: flex;
