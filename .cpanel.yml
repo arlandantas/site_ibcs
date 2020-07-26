@@ -1,0 +1,5 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/verbus/public_html/site_ibcs
+    - /bin/cp -R client/dist $DEPLOYPATH
