@@ -76,6 +76,55 @@
               }
           }
       }
+      &#programacao {
+        ul {
+          display: flex;
+          flex-direction: row;
+          list-style: none;
+          flex-wrap: wrap;
+          padding: 0;
+          margin-top: -.5em;
+          li {
+            width: 300px;
+            display: flex;
+            flex-direction: row;
+            padding: .75em;
+            border-radius: .5em;
+            background: rgba(0,0,0,.5);
+            margin: .5em;
+            flex-grow: 1;
+            div {
+              display: flex;
+              flex-direction: column;
+              place-content: center;
+              &.data {
+                text-align: center;
+                padding-right: 1em;
+                width: 100px;
+                .dia {
+                  text-transform: uppercase;
+                  font-family: monospace;
+                  font-size: 1.2em;
+                }
+                .horario {
+                  font-size: 1.5em;
+                  font-weight: bold;
+                }
+              }
+              &.detalhes {
+                flex-grow: 1;
+                .titulo {
+                  font-size: 1.25em;
+                  font-weight: bold;
+                }
+                .descricao {
+                  color: white;
+                }
+              }
+            }
+          }
+        }
+      }
       &#noticias {
           padding-bottom: 2em;
           div#carrousel {
