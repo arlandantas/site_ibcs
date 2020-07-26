@@ -17,16 +17,13 @@ services:
     working_dir: /home/node/app
     volumes:
       - ./client:/home/node/app
+    stdin_open: true
     ports:
       - 3000:3000
-    command: "npm run build"
+    command: "npm run start"
     networks:
       - frontend
       - backend
-    # links: 
-    #   - php
-    # depends_on:
-    #   - php
 
   # wordpress:
   #   image: wordpress:5.4.2-php7.2-apache
