@@ -4,12 +4,15 @@ import {
   Switch,
   Route
 } from "react-router-dom";
+import axios from 'axios'
 
 // Rotas
 import Home from './routes/home';
 import Noticias from './routes/noticias';
 import Noticia from './routes/noticia';
 import Igreja from './routes/igreja';
+
+axios.defaults.baseURL = process.env.NODE_ENV === 'development' ? 'http://localhost/' : window.location.origin+'/'
 
 export default function () {
   return (
