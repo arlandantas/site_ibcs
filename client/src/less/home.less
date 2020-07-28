@@ -91,20 +91,21 @@
         }
         ul {
           display: flex;
+          gap: 1em;
           flex-direction: row;
           list-style: none;
           flex-wrap: wrap;
           padding: 0;
-          margin: -.5em auto 0;
+          margin: -.5em auto 1em;
           li {
-            width: 300px;
+            flex-basis: 250px;
             display: flex;
             flex-direction: row;
             padding: .75em;
             border-radius: .5em;
             background: rgba(0,0,0,.5);
-            margin: .5em;
             flex-grow: 1;
+            flex-shrink: 0;
             div {
               display: flex;
               flex-direction: column;
