@@ -1,8 +1,8 @@
 RewriteEngine On
 Options FollowSymLinks
 
-RewriteCond %{DOCUMENT_ROOT}/server/public/%{REQUEST_URI} -f
-RewriteRule ^(.+) /server/public/$1 [L]
+RewriteCond %{DOCUMENT_ROOT}/client/dist/%{REQUEST_URI} -f
+RewriteRule ^(.+) /client/dist/$1 [L]
 
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^(.*)$  "server/$1"
