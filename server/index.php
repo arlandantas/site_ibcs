@@ -58,8 +58,6 @@ include_once 'load_env.php';
  */
 	define('ENVIRONMENT', isset($_SERVER['CI_ENV']) ? $_SERVER['CI_ENV'] : 'production');
 
-	echo 'ENV: '.ENVIRONMENT;
-
 /*
  *---------------------------------------------------------------
  * ERROR REPORTING
