@@ -4,5 +4,5 @@ Options FollowSymLinks
 RewriteCond %{CONTEXT_DOCUMENT_ROOT}/client/dist/%{REQUEST_URI} -f
 RewriteRule ^(.+) /client/dist/$1 [L]
 
-RewriteCond %{REQUEST_FILENAME} !-f
+# RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^(.*)$  "server/$1"
