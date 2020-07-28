@@ -9,7 +9,7 @@ class Programacao extends CI_Controller {
 		$this->load->model('ProgramacaoModel', 'programacao');
 	}
 
-	public function index( $offset = 0 ) {
+	public function index() {
 		$this->output
         ->set_content_type('application/json')
         ->set_output(json_encode($this->programacao->all()));
