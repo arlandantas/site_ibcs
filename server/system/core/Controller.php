@@ -82,6 +82,11 @@ class CI_Controller {
 			$this->$var =& load_class($class);
 		}
 
+		if (ENVIRONMENT == 'development') {
+			// $this->load->library('output');
+			get_instance()->output->set_header('Access-Control-Allow-Origin: *');
+		}
+
 		$this->load =& load_class('Loader', 'core');
 		$this->load->initialize();
 		log_message('info', 'Controller Class Initialized');
