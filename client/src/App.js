@@ -11,6 +11,7 @@ import Home from './routes/home';
 import Noticias from './routes/noticias';
 import Noticia from './routes/noticia';
 import Igreja from './routes/igreja';
+import Doacoes from './routes/doacoes';
 
 axios.defaults.baseURL = process.env.NODE_ENV === 'development' ? 'http://localhost/' : window.location.origin+'/'
 
@@ -20,6 +21,7 @@ export default function () {
       <div id="bkg"></div>
       <Switch>
         <Route path={["/igreja"]} component={Igreja} />
+        <Route path={["/doacoes"]} component={Doacoes} />
         <Route path={["/noticias"]} component={Noticias} />
         <Route path={["/noticia/:id"]} component={Noticia} />
         <Route path={['/', "/home"]} component={Home} />

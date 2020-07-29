@@ -28,7 +28,7 @@ export default class Home extends React.Component {
               <img src="imgs/logo.png" alt="Igreja Batista em Cidade Serodio"/>
           </section>
           <section id="donnations">
-              <div>
+              <div onClick={() => { window.location.hash = '#/doacoes' }}>
                   <div id="icon">
                       <i className="fas fa-donate"></i>
                   </div>

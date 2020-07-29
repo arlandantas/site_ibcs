@@ -1,0 +1,96 @@
+// out: ../css/doacoes.css, compress: true, sourceMap: false
+.page#doacoes {
+  #formas {
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+    max-width: 800px;
+    margin: 0 auto 1em;
+    flex-wrap: wrap;
+    padding: 0 1em;
+    .forma {
+      border-radius: .5em;
+      background: rgba(0,0,0,.5);
+      flex-basis: 300px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      padding: 1em;
+      justify-content: center;
+      flex-shrink: 0;
+      &#whatsapp {
+        text-align: center;
+        a {
+          text-align: center;
+          padding: .5em;
+          font-weight: bold;
+          line-height: 2em;
+          i {
+            vertical-align: sub;
+            padding-left: .25em;
+          }
+        }
+      }
+      &#picpay {
+        text-align: center;
+        h1 {
+          margin-bottom: 0;
+          img {
+            height: 50px;
+          }
+        }
+        img {
+          max-width: 80%;
+          max-height: 200px;
+          margin: auto;
+        }
+      }
+      &#pagseguro {
+        form {
+          width: 100%;
+        }
+        button {
+          background: none;
+          display: block;
+          border: none;
+          color: white;
+          cursor: pointer;
+        }
+        img, input[type=image] {
+          height: 50px;
+        }
+      }
+      & > div {
+        display: flex;
+        flex-direction: row;
+        margin: .25em 0;
+        align-items: center;
+      }
+      h1 {
+        text-align: center;
+        margin: 0 0 .5em;
+      }
+      .copy-input {
+        border: 1px solid;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: row;
+        &:not(:first-child) {
+          margin-left: .5em;
+        }
+        input {
+          border: none;
+          background: transparent;
+          color: inherit;
+          margin-left: .5em;
+          flex-grow: 1;
+          min-width: 50px;
+        }
+        i {
+          cursor: pointer;
+          padding: .5em;
+        }
+      }
+    }
+  }
+}
