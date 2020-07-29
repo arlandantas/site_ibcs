@@ -6,6 +6,7 @@ nav {
   display: flex;
   flex-direction: row;
   align-items: center;
+  min-height: max-content;
   &.nav-desktop {
     @media screen and (max-width: 599px) {
       display: none;
@@ -51,6 +52,9 @@ nav {
   }
 }
 .page > .content {
+  @media screen and (max-width: 599px) {
+    overflow-y: auto;
+  }
   & > .title_desktop {
     text-align: center;
     margin: 1em auto;

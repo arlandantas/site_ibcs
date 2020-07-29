@@ -1,4 +1,7 @@
 // out: ../css/home.css, compress: true, sourceMap: false
+
+@import 'defaults.less';
+
 .page#home {
   section {
       width: 100%;
@@ -19,7 +22,7 @@
             width: auto;
             height: auto;
             max-width: 100%;
-            max-height: 80%;
+            max-height: 40vh;
           }
       }
       &#donnations {
@@ -28,7 +31,7 @@
           & > div {
               flex-direction: row;
               display: flex;
-              background: rgba(0,0,0,.5);
+              background: @btn_bkg;
               border-radius: .5em;
               padding: 1em;
               margin: 0 1em;

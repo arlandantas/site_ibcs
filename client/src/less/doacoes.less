@@ -3,11 +3,10 @@
   #formas {
     display: flex;
     flex-direction: row;
-    gap: 1em;
     max-width: 800px;
     margin: 0 auto 1em;
     flex-wrap: wrap;
-    padding: 0 1em;
+    padding: 0 .5em;
     .forma {
       border-radius: .5em;
       background: rgba(0,0,0,.5);
@@ -18,6 +17,7 @@
       padding: 1em;
       justify-content: center;
       flex-shrink: 0;
+      margin: .5em;
       &#whatsapp {
         text-align: center;
         a {
@@ -79,6 +79,7 @@
           margin-left: .5em;
         }
         input {
+          outline: none;
           border: none;
           background: transparent;
           color: inherit;
