@@ -39,10 +39,6 @@ export default class Home extends React.Component {
               </div>
           </section>
           <section id="buttons">
-              {/* <a className="btn" href="#/igreja">
-                  <span className="icon"><i className="fas fa-church"></i></span>
-                  <span className="txt">igreja</span>
-              </a> */}
               {/* <a className="btn" href="#/noticias">
                   <span className="icon"><i className="fas fa-newspaper"></i></span>
                   <span className="txt">notícias</span>
@@ -66,6 +62,10 @@ export default class Home extends React.Component {
               <a className="btn" href="https://anchor.fm/ibserodio" target="_blank" rel="noopener noreferrer">
                   <span className="icon"><i className="fa fa-microphone-alt"></i></span>
                   <span className="txt">sermões</span>
+              </a>
+              <a className="btn" href="#/historia">
+                  <span className="icon"><i className="fas fa-church"></i></span>
+                  <span className="txt">história</span>
               </a>
           </section>
           <section id="programacao">

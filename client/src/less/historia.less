@@ -1,0 +1,44 @@
+// out: ../css/historia.css, compress: true, sourceMap: false
+
+@import 'defaults.less';
+
+.page#historia {
+  #loading {
+    font-size: 1.25em;
+    text-align: center;
+    margin: auto;
+    i {
+      margin: .5em;
+    }
+  }
+  .passo {
+    background: @btn_bkg;
+    margin: 1em auto;
+    padding: 1em;
+    border-radius: .5em;
+    width: 800px;
+    max-width: calc(100% - 2em);
+    line-height: 1.5;
+    h1 {
+      margin: 0;
+      font-size: 1.25em;
+      cursor: pointer;
+    }
+    .content {
+      display: none;
+      padding: 0 1em;
+      h2 {
+        margin: 1em 0 0;
+        font-size: 1.1em;
+      }
+      p {
+        margin: .5em 0;
+      }
+    }
+    &.opened {
+      .content {
+        display: block;
+      }
+    }
+  }
+}
