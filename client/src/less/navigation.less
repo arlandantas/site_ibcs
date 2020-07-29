@@ -28,6 +28,7 @@ nav {
     div#links {
       display: flex;
       flex-direction: row;
+      text-shadow: 2px 2px 1px #000;
     }
   }
   &.nav-mobile {
@@ -42,12 +43,16 @@ nav {
       height: 100%;
       padding: 0 .5em 0 1em;
       cursor: pointer;
+      i {
+        text-shadow: 2px 2px 2px #000;
+      }
     }
     h1 {
       font-size: 1.5em;
       flex-grow: 1;
       text-align: left;
       margin-left: 1em;
+      text-shadow: 2px 2px 2px #000;
     }
   }
 }
@@ -58,6 +63,7 @@ nav {
   & > .title_desktop {
     text-align: center;
     margin: 1em auto;
+    text-shadow: 2px 2px 2px #000;
     @media screen and (max-width: 599px) {
       display: none;
     }

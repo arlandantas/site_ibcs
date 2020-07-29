@@ -48,8 +48,8 @@ export default class Home extends React.Component {
                   <span className="txt">notícias</span>
               </a> */}
               <a className="btn" href="https://youtube.com/ibserodio" target="_blank" rel="noopener noreferrer">
-                  <span className="icon"><i className="fas fa-video"></i></span>
-                  <span className="txt">Ao Vivo</span>
+                  <span className="icon"><i className="fab fa-youtube"></i></span>
+                  <span className="txt">YouTube</span>
               </a>
               <a className="btn" href="https://bibliaonline.com.br" target="_blank" rel="noopener noreferrer">
                   <span className="icon"><i className="fas fa-bible"></i></span>
@@ -60,8 +60,12 @@ export default class Home extends React.Component {
                   <span className="txt">instagram</span>
               </a>
               <a className="btn" href="https://fb.com/ibserodio" target="_blank" rel="noopener noreferrer">
-                  <span className="icon"><i className="fab fa-facebook"></i></span>
+                  <span className="icon"><i className="fab fa-facebook-square"></i></span>
                   <span className="txt">facebook</span>
+              </a>
+              <a className="btn" href="https://anchor.fm/ibserodio" target="_blank" rel="noopener noreferrer">
+                  <span className="icon"><i className="fa fa-microphone-alt"></i></span>
+                  <span className="txt">sermões</span>
               </a>
           </section>
           <section id="programacao">
@@ -110,6 +114,23 @@ export default class Home extends React.Component {
               </div>
               <a href="#noticias">Ver todas as notícias</a>
           </section> */}
+          <section id="contatos">
+            <div className="card">
+              <h1>Igreja Batista em Cidade Serodio</h1>
+              <a href="https://goo.gl/maps/kfd7wpaCJH2xWctKA" target="_blank" rel="noopener noreferrer">
+                <i className="fa fa-map"></i>
+                <span>Av. Delfinópolis, 491 - Cidade Seródio, Guarulhos - SP. CEP 07150-010</span>
+              </a>
+              <a href="https://api.whatsapp.com/send?phone=551124672355" target="_blank" rel="noopener noreferrer">
+                <i className="fab fa-whatsapp"></i>
+                <span>+55 (11) 2467-2355</span>
+              </a>
+              <a href="mailto:contato@ibserodio.com.br" target="_blank" rel="noopener noreferrer">
+                <i className="fa fa-envelope"></i>
+                <span>contato@ibserodio.com.br</span>
+              </a>
+            </div>
+          </section>
       </div>
     );
   }
