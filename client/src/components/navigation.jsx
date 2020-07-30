@@ -13,10 +13,9 @@ export default function (props) {
       <nav className="nav-desktop">
         <a id="logo" href="#/"><img src="imgs/logo_small.png" alt="IBCS"/></a>
         <div id="links">
-          {/* <a href="#/">Home</a> */}
-          {/* <a href="#/noticias">Notícias</a> */}
-          <a href="#/igreja">Sobre</a>
-          <a href="#/contribua">Contribua</a>
+          <a href="#/">Início</a>
+          <a href="#/historia">Sobre</a>
+          <a href="#/doacoes">Contribua</a>
         </div>
       </nav>
       <section className="content">
