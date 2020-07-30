@@ -27,6 +27,17 @@ export default class Home extends React.Component {
           <section id="hero">
               <img src="imgs/logo.png" alt="Igreja Batista em Cidade Serodio"/>
           </section>
+          <section id="inscricao">
+              <div onClick={() => { (window.open('https://forms.gle/btFKpRQvrhSXUwYH7', '_blank')).focus() }}>
+                  <div id="icon">
+                      <i className="fa fa-file-signature"></i>
+                  </div>
+                  <div id="text">
+                      <h2>Se inscreva</h2>
+                      <span>Participe dos nosso cultos presenciais.</span>
+                  </div>
+              </div>
+          </section>
           <section id="donnations">
               <div onClick={() => { window.location.hash = '#/doacoes' }}>
                   <div id="icon">
