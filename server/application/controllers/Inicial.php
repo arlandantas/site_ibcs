@@ -5,6 +5,13 @@ class Inicial extends CI_Controller {
 	public function index() {
 		echo "Olá! :)";
 	}
+	public function admin () {
+		$this->load->library('session');
+		if (!isset($_SESSION['user_id'])) {
+      redirect('login');
+		}
+		echo "Olá admin!";
+	}
 	public function migrate () {
 		if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 			if ($this->input->post('password') === NULL) {
