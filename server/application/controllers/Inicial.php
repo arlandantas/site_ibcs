@@ -10,7 +10,8 @@ class Inicial extends CI_Controller {
 		if (!isset($_SESSION['user_id'])) {
       redirect('login');
 		}
-		echo "Olá admin!";
+		$this->load->view('header');
+		$this->load->view('footer');
 	}
 	public function migrate () {
 		if ($_SERVER['REQUEST_METHOD'] === 'POST') {
