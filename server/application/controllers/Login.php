@@ -16,8 +16,20 @@ class Login extends CI_Controller {
     if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
       return $this->load->view('login');
     } else {
-      $this->session->set_userdata('user_id', 1);
-      redirect('admin');
+      $this->load->model('Users_model', 'users');
+      try {
+        $user = $this->users->getFromLogin(
+          $this->input->post('login'),
+          $this->input->post('password')
+        );
+        $this->session->set_userdata('user_id', $user->id);
+        redirect('admin');
+      } catch (Exception $e) {
+        return $this->load->view('login', [
+          'error' => $e->getMessage(),
+          'login' => $this->input->post('login')
+        ]);
+      }
     }
   }
 

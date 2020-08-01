@@ -34,7 +34,11 @@
         <?php } ?>
         <div class="form-group">
           <label for="login">Usuário:</label>
-          <input type="text" class="form-control" name="login" id="login">
+          <input type="text" class="form-control" name="login" id="login"
+          <?php if (isset($login) && $login) { ?>
+          value="<?= $login ?>"
+          <?php } ?>
+          >
         </div>
         <div class="form-group">
           <label for="password">Senha:</label>
