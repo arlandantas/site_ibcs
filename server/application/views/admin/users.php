@@ -4,7 +4,7 @@
       <h5 class="card-title">Cadastro</h5>
       <div class="row">
         <div class="col-md-12">
-          <input type="text" class="form-control" disabled name="id" id="txt_id">
+          <input type="hidden" class="form-control" name="id" id="txt_id">
           <div class="form-group">
             <label for="txt_name">Nome:</label>
             <input type="text" class="form-control" name="name" id="txt_name">
