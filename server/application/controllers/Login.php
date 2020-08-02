@@ -23,6 +23,7 @@ class Login extends CI_Controller {
           $this->input->post('password')
         );
         $this->session->set_userdata('user_id', $user->id);
+        $this->session->set_userdata('user_permissoes', $user->permissoes);
         redirect('admin');
       } catch (Exception $e) {
         return $this->load->view('login', [

@@ -8,6 +8,12 @@
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
   <title><?= isset($title) ? $title : 'IBCS - Admin' ?></title>
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <style>
     nav#menu h1 {
       text-align: center;
@@ -25,7 +31,7 @@
   </style>
 </head>
 <body>
-  <div class="container-fluid">
+  <div class="container">
     <div class="row">
       <nav class="col-md-3" id="menu">
         <h1>IBCS</h1>
@@ -34,6 +40,7 @@
           $menus = [
             [ 'href' => '/admin/users', 'name' => 'Usuários' ],
             [ 'href' => '/admin/programacoes', 'name' => 'Programações' ],
+            [ 'href' => '/logoff', 'name' => 'Sair' ],
           ];
           ?>
           <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
@@ -45,11 +52,15 @@
         <div id="mobile">
           <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
             <li class="nav-item dropdown">
-            <?php foreach ($menus as $menu) { if ('/'.uri_string() == $menu['href']) { ?>
+            <?php if (uri_string() !== 'admin') { foreach ($menus as $menu) { if ('/'.uri_string() == $menu['href']) { ?>
               <a class="nav-link dropdown-toggle active" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
                 <?= $menu['name'] ?>
               </a>
-            <?php } } ?>
+            <?php } } } else { ?>
+              <a class="nav-link dropdown-toggle active" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                Menu
+              </a>
+            <?php } ?>
               <div class="dropdown-menu">
               <?php foreach ($menus as $menu) { ?>
                 <a class="dropdown-item" href="<?= $menu['href'] ?>"><?= $menu['name'] ?></a>

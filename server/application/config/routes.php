@@ -52,8 +52,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'inicial';
 $route['migrate'] = 'inicial/migrate';
 $route['admin'] = 'inicial/admin';
-$route['admin/users'] = 'inicial/admin';
-$route['admin/programacoes'] = 'inicial/admin';
+$route['admin/programacoes'] = 'programacao/index_admin';
 $route['logoff'] = 'login/logoff';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
+
+$route['admin/users']['GET'] = 'users/index';
+$route['admin/users']['POST'] = 'users/save';
+$route['admin/users']['DELETE'] = 'users/delete/$1';
