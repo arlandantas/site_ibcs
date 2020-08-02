@@ -78,6 +78,14 @@
         permissoes: $("#txt_permissoes").val(),
         ativo: $("#slct_status").val(),
       }
+      if (!user.name) { alert('Insira um nome válido'); return $("#txt_name").focus() }
+      if (!user.username) { alert('Insira um nome válido'); return $("#txt_username").focus() }
+      if (!user.permissoes) { alert('Selecione uma permissão válida'); return $("#txt_permissoes").focus() }
+      if (!user.ativo) { alert('Selecione um status'); return $("#slct_status").focus() }
+      if (!user.id && !user.password) {
+        alert("Você precisa definir uma senha para o novo usuário!")
+        return $("#txt_password").focus()
+      }
       axios.post('/admin/users', user)
         .then(({data}) => {
           users = [
@@ -105,7 +113,7 @@
     updateTable()
   })
   function updateTable () {
-    $("#tbl_registros").html(users.sort((a, b) => a.name < b.name ? -1 : 1).map(u => `<tr reg-id="${u.id}">
+    $("#tbl_registros tbody").html(users.sort((a, b) => a.name < b.name ? -1 : 1).map(u => `<tr reg-id="${u.id}">
       <td>${u.name}</td>
       <td>${u.username}</td>
       <td>
