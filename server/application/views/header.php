@@ -45,7 +45,7 @@
           ?>
           <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
             <?php foreach ($menus as $menu) { ?>
-              <a class="nav-link <?= '/'.uri_string() == $menu['href'] ? 'active' : '' ?>" href="<?= $menu['href'] ?>" aria-selected="true"><?= $menu['name'] ?></a>
+              <a class="nav-link <?= '/'.uri_string() == $menu['href'] ? 'active' : '' ?>" href="<?= $menu['href'] ?>" aria-selected="true" style="text-align: right"><?= $menu['name'] ?></a>
             <?php } ?>
           </div>
         </div>
