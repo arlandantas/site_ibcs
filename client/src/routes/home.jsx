@@ -13,7 +13,7 @@ export default class Home extends React.Component {
   }
 
   componentDidMount () {
-    axios.get('/programacao')
+    axios.get('/programacoes')
       .then(({ data }) => {
         this.setState({ programacoes: data })
       }).catch(e => {

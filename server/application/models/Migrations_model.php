@@ -51,6 +51,50 @@ class Migrations_model extends CI_Model {
       ]);
       $this->set_current_version('0.1');
     }
+    if ($this->current_version < '0.2') {
+      $this->db->query('CREATE TABLE IF NOT EXISTS `php_sessions` (
+        `id` varchar(128) NOT NULL,
+        `ip_address` varchar(45) NOT NULL,
+        `timestamp` int(10) unsigned DEFAULT 0 NOT NULL,
+        `data` blob NOT NULL,
+        KEY `ci_sessions_timestamp` (`timestamp`)
+      );');
+      $this->set_current_version('0.2');
+    }
+    if ($this->current_version < '0.2.1') {
+      $this->dbforge->add_field('id');
+      $this->dbforge->add_field([
+        'name' => array(
+          'type' => 'TEXT',
+          'null' => FALSE
+        ),
+        'username' => array(
+          'type' => 'TEXT',
+          'null' => TRUE
+        ),
+        'password' => array(
+          'type' => 'TEXT',
+          'null' => FALSE
+        ),
+        'permissoes' => array(
+          'type' => 'VARCHAR',
+          'constraint' => '10',
+          'null' => FALSE,
+          'default' => '*'
+        ),
+        'ativo' => array(
+          'type' => 'TINYINT',
+          'constraint' => '1',
+          'null' => FALSE,
+          'default' => 1
+        ),
+      ]);
+      $this->dbforge->create_table('users', TRUE);
+      $this->db->insert_batch('users', [
+        [ 'name' => 'Admin', 'username' => 'admin', 'password' => password_hash("admin", PASSWORD_DEFAULT) ]
+      ]);
+      $this->set_current_version('0.2.1');
+    }
     return $this->current_version;
   }
 

@@ -6,7 +6,7 @@ class Historia extends CI_Controller {
 
 	public function __construct() {
 		parent::__construct();
-		$this->load->model('ProgramacaoModel', 'programacao');
+		$this->load->model('Programacoes_model', 'programacao');
 	}
 
 	public function index() {
