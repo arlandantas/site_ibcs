@@ -15,18 +15,18 @@ html {
 #root {
     height: 100%;
     width: 100%;
-}
-div#bkg {
-  background-image: url('/imgs/initial_bkg.jpg');
-  background-position: center;
-  background-size: cover;
-  filter: blur(2px) opacity(.3);
-  min-height: 100vh;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  width: 100vw;
+    & > div#bkg {
+      background-image: url('/imgs/initial_bkg.jpg');
+      background-position: center;
+      background-size: cover;
+      filter: blur(2px) opacity(.3);
+      min-height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      width: 100vw;
+    }
 }
 .page {
   display: flex;

@@ -27,7 +27,32 @@ export default class Home extends React.Component {
           <section id="hero">
               <img src="imgs/logo.png" alt="Igreja Batista em Cidade Serodio"/>
           </section>
-          <section id="inscricao">
+          <section id="inscricao_new" onClick={() => { (window.open('https://forms.gle/btFKpRQvrhSXUwYH7', '_blank')).focus() }}>
+              <div id="bkg"></div>
+              <div id="text">
+                <h2>Se inscreva</h2>
+                <span>E participe dos nosso cultos presenciais.</span>
+              </div>
+          </section>
+          <section id="programacao">
+              <div id="bkg"></div>
+              <h2>Programação Semanal</h2>
+              <ul>
+                { this.state.programacoes.map((programacao, i) =>
+                  <li key={`programacao${i}`}>
+                    <div className="data">
+                      <span className="dia">{ programacao.dia }</span>
+                      <span className="horario">{ programacao.horario }</span>
+                    </div>
+                    <div className="detalhes">
+                      <span className="titulo">{ programacao.titulo }</span>
+                      <span className="descricao">{ programacao.descricao }</span>
+                    </div>
+                  </li>
+                ) }
+              </ul>
+          </section>
+          {/* <section id="inscricao">
               <div onClick={() => { (window.open('https://forms.gle/btFKpRQvrhSXUwYH7', '_blank')).focus() }}>
                   <div id="icon">
                       <i className="fa fa-file-signature"></i>
@@ -37,17 +62,13 @@ export default class Home extends React.Component {
                       <span>Participe dos nosso cultos presenciais.</span>
                   </div>
               </div>
-          </section>
-          <section id="donnations">
-              <div onClick={() => { window.location.hash = '#/doacoes' }}>
-                  <div id="icon">
-                      <i className="fas fa-donate"></i>
-                  </div>
-                  <div id="text">
-                      <h2>Faça sua doação</h2>
-                      <span>Clique aqui para fazer sua doação, dízimo ou oferta.</span>
-                  </div>
-              </div>
+          </section> */}
+          <section id="donnations" onClick={() => { window.location.hash = '#/doacoes' }}>
+            <div id="bkg"></div>
+            <div id="text">
+              <h2>Contribua</h2>
+              <span>Clique aqui para fazer sua doação, dízimo ou oferta.</span>
+            </div>
           </section>
           <section id="buttons">
               {/* <a className="btn" href="#/noticias">
@@ -78,23 +99,6 @@ export default class Home extends React.Component {
                   <span className="icon"><i className="fas fa-church"></i></span>
                   <span className="txt">história</span>
               </a>
-          </section>
-          <section id="programacao">
-              <h2>Programação Semanal</h2>
-              <ul>
-                { this.state.programacoes.map((programacao, i) =>
-                  <li key={`programacao${i}`}>
-                    <div className="data">
-                      <span className="dia">{ programacao.dia }</span>
-                      <span className="horario">{ programacao.horario }</span>
-                    </div>
-                    <div className="detalhes">
-                      <span className="titulo">{ programacao.titulo }</span>
-                      <span className="descricao">{ programacao.descricao }</span>
-                    </div>
-                  </li>
-                ) }
-              </ul>
           </section>
           {/* <section id="eventos">
               <h2>Próximos Eventos</h2>
