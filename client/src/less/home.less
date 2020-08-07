@@ -3,6 +3,8 @@
 @import 'defaults.less';
 
 .page#home {
+  padding-top: 50vh;
+  overflow: visible;
   section {
       width: 100%;
       max-width: 800px;
@@ -32,13 +34,64 @@
           flex-direction: column;
           justify-content: center;
           align-items: center;
-          padding: 1em;
-          min-height: 400px;
+          padding: 0 1em;
+          max-width: 100%;
+          // min-height: 400px;
+
+          position: fixed;
+          top: 0;
+          z-index: 2;
+          background: @root_bkg;
+          margin: 0 auto;
           img {
-            width: 20ch;
             height: auto;
             max-width: 90%;
+            margin: .5em;
+            max-height: calc(100% - 1em);
           }
+          &.shadowed {
+            box-shadow: 0 -.4em .25em .5em rgba(0,0,0,.5);
+          }
+      }
+      &#big_cards {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1em;
+        @media screen and (min-width: 700px) {
+          grid-template-columns: 1fr 1fr;
+        }
+        & > div {
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-end;
+          position: relative;
+          padding: 1em;
+          text-align: center;
+          height: 300px;
+          h2 {
+            margin: 0;
+            text-shadow: 2px 2px 2px #000;
+          }
+          span {
+            margin: 0;
+            text-shadow: 1px 1px 2px #000;
+          }
+          & > #bkg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            background-size: cover;
+          }
+          &#inscricao > #bkg {
+            background-image: url('/imgs/culto1.jpg');
+          }
+          &#donnations > #bkg {
+            background-image: url('/imgs/culto5.jpg');
+          }
+        }
       }
       &#inscricao_new {
         width: 100%;
@@ -190,7 +243,6 @@
           margin-top: -1em;
           a.btn {
               // border: 1px solid white;
-              border-radius: .5em;
               display: flex;
               flex-direction: column;
               margin: .5em;
@@ -200,7 +252,6 @@
               text-decoration: none;
               color: white;
               height: max-content;
-              background: @btn_bkg;
               span {
                   text-align: center;
                   &.txt {
@@ -216,13 +267,14 @@
           }
       }
       &#programacao {
-        max-width: 100%;
-        padding: 2em 0;
-        & > #bkg {
-          background-image: url('/imgs/culto3.jpg');
-        }
+        // max-width: 100%;
+        padding: 0 0;
+        margin-bottom: 0;
+        // & > #bkg {
+        //   background-image: url('/imgs/culto3.jpg');
+        // }
         h2 {
-          max-width: calc(800px - 2em);
+          max-width: 800px;
           width: calc(100% - 1em);
           margin: auto auto .75em;
         }
@@ -232,8 +284,8 @@
           list-style: none;
           flex-wrap: wrap;
           padding: 0;
-          margin: -.5em auto 1em;
-          max-width: calc(800px - 2em);
+          margin: -.5em auto 0;
+          max-width: 800px;
           width: calc(100% - 1em);
           justify-content: center;
           li {
@@ -243,7 +295,7 @@
             margin: .5em;
             padding: .75em;
             border-radius: .5em;
-            background: rgba(0,0,0,.7);
+            background: @btn_bkg;
             flex-grow: 1;
             flex-shrink: 0;
             div {
