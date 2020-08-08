@@ -1,4 +1,7 @@
 // out: ../css/doacoes.css, compress: true, sourceMap: false
+
+@import 'defaults.less';
+
 .page#doacoes {
   #formas {
     display: flex;
@@ -9,7 +12,6 @@
     padding: 0 .5em;
     .forma {
       border-radius: .5em;
-      background: rgba(0,0,0,.5);
       flex-basis: 300px;
       flex-grow: 1;
       display: flex;
@@ -18,6 +20,7 @@
       justify-content: center;
       flex-shrink: 0;
       margin: .5em;
+      border: 1px solid @darker;
       &#whatsapp {
         text-align: center;
         a {
@@ -44,6 +47,9 @@
           max-height: 200px;
           margin: auto;
         }
+        a > img {
+          margin: 1em auto;
+        }
       }
       &#pagseguro {
         form {
@@ -53,7 +59,7 @@
           background: none;
           display: block;
           border: none;
-          color: white;
+          color: inherit;
           cursor: pointer;
         }
         img, input[type=image] {
@@ -75,6 +81,8 @@
         flex-grow: 1;
         display: flex;
         flex-direction: row;
+        border-radius: .5em;
+        overflow: hidden;
         &:not(:first-child) {
           margin-left: .5em;
         }
@@ -90,6 +98,8 @@
         i {
           cursor: pointer;
           padding: .5em;
+          background: @btn_bkg_gradient;
+          color: white;
         }
       }
     }

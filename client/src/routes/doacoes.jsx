@@ -58,7 +58,7 @@ class Doacoes extends React.Component {
             <h1><img src="imgs/logo-picpay.png" alt="PicPay" /></h1>
             <a href="http://app.picpay.com/payment?type=store&sellerId=149943" target="_blank" rel="noopener noreferrer">Clique aqui ou escaneie o QR abaixo</a>
             <a href="http://app.picpay.com/payment?type=store&sellerId=149943" target="_blank" rel="noopener noreferrer">
-              <img src="imgs/qr-picpay.png" alt="QR PicPay" />
+              <img src="imgs/qr-picpay-dark.png" alt="QR PicPay" color="red" />
             </a>
           </div>
         </div>

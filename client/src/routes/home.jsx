@@ -42,7 +42,7 @@ export default class Home extends React.Component {
     return (
       <div className="page" id="home">
           <section id="hero">
-              <img src="imgs/logo.png" alt="Igreja Batista em Cidade Serodio"/>
+              <img src="imgs/logo_dark.png" alt="Igreja Batista em Cidade Serodio"/>
           </section>
           <section id="big_cards">
             <div id="inscricao" className="btn" onClick={() => { (window.open('https://forms.gle/btFKpRQvrhSXUwYH7', '_blank')).focus() }}>
@@ -76,13 +76,21 @@ export default class Home extends React.Component {
                   <span className="icon"><i className="fas fa-newspaper"></i></span>
                   <span className="txt">notícias</span>
               </a> */}
-              <a className="btn" href="https://youtube.com/ibserodio" target="_blank" rel="noopener noreferrer">
-                  <span className="icon"><i className="fab fa-youtube"></i></span>
-                  <span className="txt">YouTube</span>
+              <a className="btn" href="#/historia">
+                  <span className="icon"><i className="fas fa-church"></i></span>
+                  <span className="txt">história</span>
               </a>
               <a className="btn" href="https://bibliaonline.com.br" target="_blank" rel="noopener noreferrer">
                   <span className="icon"><i className="fas fa-bible"></i></span>
                   <span className="txt">bíblia</span>
+              </a>
+              <a className="btn" href="https://anchor.fm/ibserodio" target="_blank" rel="noopener noreferrer">
+                  <span className="icon"><i className="fa fa-microphone-alt"></i></span>
+                  <span className="txt">sermões</span>
+              </a>
+              <a className="btn" href="https://youtube.com/ibserodio" target="_blank" rel="noopener noreferrer">
+                  <span className="icon"><i className="fab fa-youtube"></i></span>
+                  <span className="txt">YouTube</span>
               </a>
               <a className="btn" href="https://www.instagram.com/ibserodio/" target="_blank" rel="noopener noreferrer">
                   <span className="icon"><i className="fab fa-instagram"></i></span>
@@ -91,14 +99,6 @@ export default class Home extends React.Component {
               <a className="btn" href="https://fb.com/ibserodio" target="_blank" rel="noopener noreferrer">
                   <span className="icon"><i className="fab fa-facebook-square"></i></span>
                   <span className="txt">facebook</span>
-              </a>
-              <a className="btn" href="https://anchor.fm/ibserodio" target="_blank" rel="noopener noreferrer">
-                  <span className="icon"><i className="fa fa-microphone-alt"></i></span>
-                  <span className="txt">sermões</span>
-              </a>
-              <a className="btn" href="#/historia">
-                  <span className="icon"><i className="fas fa-church"></i></span>
-                  <span className="txt">história</span>
               </a>
           </section>
           <section id="programacao">
