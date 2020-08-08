@@ -1,25 +1,46 @@
 // out: ../css/index.css, compress: true, sourceMap: false
+
+@import 'defaults.less';
+
 html, body {
   margin: 0;
   padding: 0;
-  color: white;
+  color: @darker;
   height: 100%;
   * {
       font-family: 'Roboto', sans-serif;
       box-sizing: border-box;
+      z-index: 1;
   }
+  --root-bkg: #eeeef5;
 }
 html {
-  background-color: #222;
+  background-color: var(--root-bkg);
+}
+.btn {
+  background-image: @btn_bkg_gradient;
+  box-shadow: @btn_shadow;
+  cursor: pointer;
+  border-radius: .5em;
+  overflow: hidden;
+  transition: transform .25s, box-shadow .25s;
+  color: white;
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: @btn_shadow_hover;
+    background-image: @btn_bkg_gradient_hover;
+    background-position: right center;
+  }
 }
 #root {
     height: 100%;
     width: 100%;
     & > div#bkg {
-      background-image: url('/imgs/initial_bkg.jpg');
+      background: var(--root-bkg);
+      /*background-image: url('/imgs/initial_bkg.jpg');
       background-position: center;
       background-size: cover;
-      filter: blur(2px) opacity(.3);
+      filter: blur(2px) opacity(.3);*/
       min-height: 100vh;
       position: fixed;
       top: 0;
@@ -31,8 +52,8 @@ html {
 .page {
   display: flex;
   flex-direction: column;
-  height: 100%;
-  overflow: auto;
+  // height: 100%;
+  // overflow: auto;
   & > .content {
     flex-grow: 1;
   }
