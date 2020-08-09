@@ -16,7 +16,7 @@ import Doacoes from './routes/doacoes';
 // axios.defaults.baseURL = process.env.NODE_ENV === 'development' ? 'http://localhost/' : window.location.origin+'/'
 axios.defaults.baseURL = window.location.port === '8080' ? `http://${window.location.hostname}/` : `${window.location.origin}/`
 
-if (!window.location.protocol.startsWith('https') && window.location.hostname != 'localhost') {
+if (!window.location.protocol.startsWith('https') && window.location.hostname !== 'localhost') {
   this.location.protocol = 'https:'
 }
 
