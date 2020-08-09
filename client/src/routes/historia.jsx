@@ -23,7 +23,13 @@ class Historia extends React.Component {
         ...p,
         opened: ii !== i ? false : !p.opened
       }))
-    }))
+    }), () => {
+      window.scrollTo({
+        top: document.querySelector(`.passo:nth-of-type(${i + 1})`).offsetTop - 100,
+        left: 0,
+        behavior: 'smooth'
+      })
+    })
   }
   render () {
     return (
