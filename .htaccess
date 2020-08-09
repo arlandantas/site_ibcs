@@ -1,12 +1,9 @@
 RewriteEngine On
 Options FollowSymLinks
 
-# RewriteBase "/api"
-RewriteCond %{REQUEST_URI} "^/api(.*)$"
-RewriteRule "^api(.*)$" "/server/$1" [L]
+RewriteCond %{CONTEXT_DOCUMENT_ROOT}/client/dist/%{REQUEST_URI} -f
+RewriteRule ^(.+) /client/dist/$1 [END]
 
-RewriteCond %{DOCUMENT_ROOT}/client/dist/%{REQUEST_URI} -f
-RewriteRule ^(.+) /client/dist/$1 [L]
+RewriteRule ^$ /client/dist/index.html [END]
 
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^(.*)$  "/index.html"
+RewriteRule ^(.*)$  "server/index.php/$1"

@@ -4,19 +4,29 @@ import {
   Switch,
   Route
 } from "react-router-dom";
+import axios from 'axios'
 
 // Rotas
 import Home from './routes/home';
 import Noticias from './routes/noticias';
 import Noticia from './routes/noticia';
-import Igreja from './routes/igreja';
+import Historia from './routes/historia';
+import Doacoes from './routes/doacoes';
+
+// axios.defaults.baseURL = process.env.NODE_ENV === 'development' ? 'http://localhost/' : window.location.origin+'/'
+axios.defaults.baseURL = window.location.port === '8080' ? `http://${window.location.hostname}/` : `${window.location.origin}/`
+
+if (!window.location.protocol.startsWith('https') && window.location.hostname !== 'localhost') {
+  this.location.protocol = 'https:'
+}
 
 export default function () {
   return (
     <Router>
       <div id="bkg"></div>
       <Switch>
-        <Route path={["/igreja"]} component={Igreja} />
+        <Route path={["/historia"]} component={Historia} />
+        <Route path={["/doacoes"]} component={Doacoes} />
         <Route path={["/noticias"]} component={Noticias} />
         <Route path={["/noticia/:id"]} component={Noticia} />
         <Route path={['/', "/home"]} component={Home} />

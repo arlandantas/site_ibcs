@@ -1,12 +1,31 @@
 // out: ../css/home.css, compress: true, sourceMap: false
+
+@import 'defaults.less';
+
 .page#home {
+  padding-top: 50vh;
+  overflow: visible;
   section {
       width: 100%;
       max-width: 800px;
-      margin: 1em auto;
+      margin: .5em auto;
       padding: 0 1em;
+      position: relative;
+      & > #bkg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        background-size: cover;
+        background-position: center;
+      }
+      & > h2 {
+        margin-top: 0;
+        text-shadow: 2px 2px 2px #000;
+      }
       &#hero {
-          min-height: 40vh;
           width: 100%;
           text-align: center;
           font-size: 2em;
@@ -15,28 +34,189 @@
           flex-direction: column;
           justify-content: center;
           align-items: center;
+          padding: 0 1em;
+          max-width: 100%;
+          // min-height: 400px;
+
+          position: fixed;
+          top: 0;
+          z-index: 2;
+          background: var(--root-bkg);
+          margin: 0 auto;
+          padding: .5em 0;
           img {
-            width: auto;
-            height: auto;
-            max-width: 100%;
-            max-height: 80%;
+            height: 200px;
+            max-height: 100%;
+            object-fit: contain;
+            filter: drop-shadow(0 2px 1px #888);
+            width: 90%;
+          }
+          &.shadowed {
+            box-shadow: 0 -5px 5px 5px rgba(0,0,0,.5);
+            img {
+              filter: none;
+            }
           }
       }
-      &#donnations {
-          max-width: 400px;
+      &#big_cards {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1em;
+        @media screen and (min-width: 700px) {
+          grid-template-columns: 1fr 1fr;
+        }
+        & > div {
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-end;
+          position: relative;
+          padding: 1em;
+          text-align: center;
+          height: 300px;
+          h2 {
+            margin: 0;
+            text-shadow: 2px 2px 2px #000;
+          }
+          span {
+            margin: 0;
+            text-shadow: 1px 1px 2px #000;
+          }
+          & > #bkg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            background-size: cover;
+          }
+          &#inscricao > #bkg {
+            background-image: url('/imgs/culto1.jpg');
+          }
+          &#donnations > #bkg {
+            background-image: url('/imgs/culto5.jpg');
+          }
+        }
+      }
+      &#inscricao_new {
+        width: 100%;
+        max-width: 100%;
+        height: 400px;
+        cursor: pointer;
+        padding: 2em 0;
+        min-height: 500px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        @media (max-width: 600px) {
+          min-height: 400px;
+        }
+        & > #bkg {
+          background-image: url('/imgs/culto1.jpg');
+        }
+        #text {
+          z-index: 2;
+          color: white;
+          // background: rgba(255, 255, 255, .5);
+          text-align: center;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          width: fit-content;
+          padding: 1em;
+          margin: 0 auto;
+          font-size: 16pt;
+          @media (max-width: 600px) {
+            font-size: 12pt;
+          }
+        }
+        h2 {
+          margin: 0;
+          text-shadow: 2px 2px 2px black;
+        }
+        span {
+          text-shadow: 1px 1px 1px black;
+        }
+      }
+      &#inscricao {
+          max-width: 450px;
           margin: 1em auto;
           & > div {
               flex-direction: row;
               display: flex;
-              background: rgba(255,255,255,.2);
-              border-radius: 1em;
+              background: @darker;
+              border-radius: .5em;
               padding: 1em;
-              margin: 0 1em;
               align-items: center;
               cursor: pointer;
               #icon {
                   font-size: 3em;
-                  padding: 0 .25em;
+                  padding: 0 .75em 0 .25em;
+              }
+              #text {
+                  display: flex;
+                  flex-direction: column;
+                  h2 {
+                      font-size: 1.5em;
+                      margin: 0 0 .25em 0;
+                  }
+              }
+          }
+      }
+      &#donnations {
+        width: 100%;
+        max-width: 100%;
+        height: 400px;
+        cursor: pointer;
+        padding: 2em 0;
+        min-height: 500px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        @media (max-width: 600px) {
+          min-height: 400px;
+        }
+        & > #bkg {
+          background-image: url('/imgs/culto5.jpg');
+        }
+        #text {
+          z-index: 2;
+          color: white;
+          // background: rgba(255, 255, 255, .5);
+          text-align: center;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          width: fit-content;
+          padding: 1em;
+          margin: 0 auto;
+          font-size: 16pt;
+          @media (max-width: 600px) {
+            font-size: 12pt;
+          }
+        }
+        h2 {
+          margin: 0;
+          text-shadow: 2px 2px 2px black;
+        }
+        span {
+          text-shadow: 1px 1px 1px black;
+        }
+      }
+      &#donnations_old {
+          max-width: 450px;
+          margin: 1em auto;
+          & > div {
+              flex-direction: row;
+              display: flex;
+              background: @darker;
+              border-radius: .5em;
+              padding: 1em;
+              align-items: center;
+              cursor: pointer;
+              #icon {
+                  font-size: 3em;
+                  padding: 0 .75em 0 .25em;
               }
               #text {
                   display: flex;
@@ -49,45 +229,65 @@
           }
       }
       &#buttons {
-          display: flex;
+          display: grid;
+          grid-template-columns: repeat(6, 1fr);
+          @media (max-width: 700px) {
+            grid-template-columns: repeat(3, 1fr);
+          }
+          @media (max-width: 500px) {
+            grid-template-columns: repeat(2, 1fr);
+          }
           flex-direction: row;
           flex-wrap: wrap;
           justify-content: center;
-          padding: 1em;
+          padding: 1em .5em;
           height: max-content;
           min-height: max-content;
+          margin-bottom: 0;
+          padding-bottom: 0;
+          margin-top: -1em;
           a.btn {
               // border: 1px solid white;
-              border-radius: 4px;
               display: flex;
               flex-direction: column;
               margin: .5em;
               padding: 1em;
-              max-width: 120px;
+              flex-basis: 120px;
               flex-grow: 1;
               text-decoration: none;
               color: white;
               height: max-content;
-              &:hover {
-                  background: rgba(255,255,255,.2);
+              * {
+                filter: drop-shadow(0px 1px 1px #000);
               }
               span {
                   text-align: center;
                   &.txt {
                       text-transform: uppercase;
                       font-weight: bold;
-                      margin-top: 1em;
-                      font-size: .9em;
+                      margin-top: .5em;
+                      font-size: .8em;
                   }
                   &.icon {
-                      font-size: 3em;
+                      font-size: 2.5em;
                   }
               }
           }
       }
       &#programacao {
-        & > h2 {
-          margin-top: 0;
+        // max-width: 100%;
+        padding: 0 0;
+        margin-bottom: 0;
+        // & > #bkg {
+        //   background-image: url('/imgs/culto3.jpg');
+        // }
+        h2 {
+          max-width: 800px;
+          width: calc(100% - 1em);
+          margin: 1em auto .75em 1em;
+          color: @darker;
+          text-shadow: 0px 0px 0px #888;
+          font-weight: 900;
         }
         ul {
           display: flex;
@@ -96,16 +296,22 @@
           flex-wrap: wrap;
           padding: 0;
           margin: -.5em auto 0;
+          max-width: 800px;
+          width: calc(100% - 1em);
+          justify-content: center;
           li {
-            width: 300px;
+            flex-basis: 250px;
             display: flex;
             flex-direction: row;
+            margin: .5em;
             padding: .75em;
             border-radius: .5em;
-            background: rgba(0,0,0,.5);
-            margin: .5em;
+            // background: @btn_bkg_gradient;
+            border: 1px solid @darker;
             flex-grow: 1;
+            flex-shrink: 0;
             div {
+              color: @darker;
               display: flex;
               flex-direction: column;
               place-content: center;
@@ -119,7 +325,7 @@
                   font-size: 1.2em;
                 }
                 .horario {
-                  font-size: 1.5em;
+                  font-size: 1.3em;
                   font-weight: bold;
                 }
               }
@@ -128,9 +334,6 @@
                 .titulo {
                   font-size: 1.25em;
                   font-weight: bold;
-                }
-                .descricao {
-                  color: white;
                 }
               }
             }
@@ -191,6 +394,38 @@
               padding: .5em;
               text-align: center;
           }
+      }
+      &#contatos {
+        margin-bottom: 0;
+        .card {
+          color: @darker;
+          background-color: transparent;
+          border-radius: .5em;
+          padding: 1em;
+          border-bottom-left-radius: 0;
+          border-bottom-right-radius: 0;
+          border: 1px solid @darker;
+          border-bottom: none;
+          h1 {
+            text-align: center;
+            font-size: 1.2em;
+            margin: .5em 0;
+          }
+          a {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding: .5em 0;
+            justify-content: flex-start;
+            i {
+              padding: 0 .5em;
+              display: block;
+              width: 50px;
+              flex-shrink: 0;
+              text-align: center;
+            }
+          }
+        }
       }
   }
 }
