@@ -5,6 +5,7 @@ import {
   Route
 } from "react-router-dom";
 import axios from 'axios'
+import ScrollToTop from './components/scrollToTop'
 
 // Rotas
 import Home from './routes/home';
@@ -23,6 +24,7 @@ if (!window.location.protocol.startsWith('https') && window.location.hostname !=
 export default function () {
   return (
     <Router>
+      <ScrollToTop />
       <div id="bkg"></div>
       <Switch>
         <Route path={["/historia"]} component={Historia} />
