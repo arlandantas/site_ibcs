@@ -1,5 +1,6 @@
 import React from 'react';
 import '../css/navigation.css';
+// import { useHistory } from "react-router-dom";
 
 export default class Navigation extends React.Component {
   componentDidMount () {
@@ -15,11 +16,18 @@ export default class Navigation extends React.Component {
       }
     }
   }
+  goBack () {
+    // console.log('Done', window.location)
+    if (document.referrer !== '')
+      window.history.go(-1)
+    else
+      window.location.hash = '#/'
+  }
   render () {
     return (
       <div className="page" id={this.props.id}>
         <nav className="nav-mobile">
-          <button id="back" onClick={() => window.history.go(-1)}>
+          <button id="back" onClick={() => this.goBack()}>
             <i className="fas fa-arrow-left"></i>
           </button>
           <h1>{this.props.titulo || 'IBCS'}</h1>

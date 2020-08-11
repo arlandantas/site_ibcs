@@ -4,6 +4,9 @@ Options FollowSymLinks
 RewriteCond %{CONTEXT_DOCUMENT_ROOT}/client/dist/%{REQUEST_URI} -f
 RewriteRule ^(.+) /client/dist/$1 [END]
 
+RewriteCond %{REQUEST_URI} ^/contribua.html$
+RewriteRule (.*) '/#/doacoes' [R,NE,L]
+
 RewriteRule ^$ /client/dist/index.html [END]
 
 RewriteRule ^(.*)$  "server/index.php/$1"
