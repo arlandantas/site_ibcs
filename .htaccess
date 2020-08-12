@@ -1,6 +1,11 @@
 RewriteEngine On
 Options FollowSymLinks
 
+RewriteCond %{HTTP_HOST} ^www\.ibserodio\.com\.br [OR,NC]
+RewriteCond %{HTTP_HOST} ^ibserodio\.com\.br [NC]
+RewriteCond %{SERVER_PORT} 80
+RewriteRule ^(.*)$ https://ibserodio.com.br/$1 [R,L]
+
 RewriteCond %{CONTEXT_DOCUMENT_ROOT}/client/dist/%{REQUEST_URI} -f
 RewriteRule ^(.+) /client/dist/$1 [END]
 
