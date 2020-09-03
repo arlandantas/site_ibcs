@@ -30,4 +30,15 @@ class Inicial extends CI_Controller {
 			<button type="submit">Migrar</button>
 		</form>';
 	}
+	public function contato () {
+		echo json_encode($this->input->post());
+		// if ($this->input->post('password') === NULL) {
+		// 	echo "Preciso que você me informe uma senha válida!";
+		// } else if ($this->input->post('password') != $_ENV['DB_PASS']) {
+		// 	echo "Senha incorreta!";
+		// } else {
+		// 	$this->load->model('Migrations_model', 'migrations');
+		// 	echo "Banco de Dados atualizado para a versão {$this->migrations->migrate()}";
+		// }
+	}
 }

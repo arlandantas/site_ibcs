@@ -13,6 +13,7 @@ import Noticias from './routes/noticias';
 import Noticia from './routes/noticia';
 import Historia from './routes/historia';
 import Doacoes from './routes/doacoes';
+import Contato from './routes/contato';
 
 // axios.defaults.baseURL = process.env.NODE_ENV === 'development' ? 'http://localhost/' : window.location.origin+'/'
 axios.defaults.baseURL = window.location.port === '8080' ? `http://${window.location.hostname}/` : `${window.location.origin}/`
@@ -28,6 +29,7 @@ export default function () {
       <div id="bkg"></div>
       <Switch>
         <Route path={["/historia"]} component={Historia} />
+        <Route path={["/contato"]} component={Contato} />
         <Route path={["/doacoes"]} component={Doacoes} />
         <Route path={["/noticias"]} component={Noticias} />
         <Route path={["/noticia/:id"]} component={Noticia} />

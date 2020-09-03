@@ -230,12 +230,21 @@
       }
       &#buttons {
           display: grid;
-          grid-template-columns: repeat(6, 1fr);
+          grid-template-columns: repeat(4, 1fr);
+          .btn.contato {
+            grid-column: 3 / span 2;
+          }
           @media (max-width: 700px) {
             grid-template-columns: repeat(3, 1fr);
+            .btn.contato {
+              grid-column: 1 / span 3;
+            }
           }
           @media (max-width: 500px) {
             grid-template-columns: repeat(2, 1fr);
+            .btn.contato {
+              grid-column: 1 / span 2;
+            }
           }
           flex-direction: row;
           flex-wrap: wrap;

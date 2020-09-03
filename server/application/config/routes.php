@@ -56,6 +56,8 @@ $route['logoff'] = 'login/logoff';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
+$route['contato']['POST'] = 'inicial/contato';
+
 $route['admin/users']['GET'] = 'users/index';
 $route['admin/users']['POST'] = 'users/save';
 $route['admin/users']['DELETE'] = 'users/delete/$1';
