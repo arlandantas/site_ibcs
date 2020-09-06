@@ -41,4 +41,20 @@ class Inicial extends CI_Controller {
 		// 	echo "Banco de Dados atualizado para a versão {$this->migrations->migrate()}";
 		// }
 	}
+	public function sendMail () {
+		$this->load->library('email');
+
+		$this->email->from('site@ibserodio.com.br', 'Contato Site');
+		// $this->email->to('arlanjose@gmail.com');
+		$this->email->to('lanfsa@hotmail.com');
+		// $this->email->cc('another@another-example.com');
+		// $this->email->bcc('them@their-example.com');
+
+		$this->email->subject('Email Test');
+		$this->email->message('Testing the email class.SSSSS');
+
+		echo $this->email->send();
+
+		echo "enviado!";
+	}
 }

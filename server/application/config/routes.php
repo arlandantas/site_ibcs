@@ -57,6 +57,7 @@ $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
 $route['contato']['POST'] = 'inicial/contato';
+$route['contato']['GET'] = 'inicial/sendMail';
 
 $route['admin/users']['GET'] = 'users/index';
 $route['admin/users']['POST'] = 'users/save';
