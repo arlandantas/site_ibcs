@@ -61,6 +61,14 @@ class Doacoes extends React.Component {
               <img src="imgs/qr-picpay-dark.png" alt="QR PicPay" color="red" />
             </a>
           </div>
+          <div className="forma" id="paypal">
+            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+              <input type="hidden" name="cmd" value="_s-xclick" />
+              <input type="hidden" name="hosted_button_id" value="4LPY8X4XLCS4L" />
+              <input type="image" src="imgs/logo-paypal.png" name="submit" alt="Doe com Paypal" />
+              <button type="submit">Clique aqui e doe com cartão de crédito ou boleto bancário</button>
+            </form>
+          </div>
         </div>
       </Navigation>
     );

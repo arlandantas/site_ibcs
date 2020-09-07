@@ -1,0 +1,58 @@
+// out: ../css/contato.css, compress: true, sourceMap: false
+
+@import 'defaults.less';
+
+.page#contato {
+  form {
+    width: 90%;
+    max-width: 500px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    & > div {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      margin: .25em 0;
+      b {
+        margin: auto .5em auto 0;
+      }
+      &.textarea {
+        flex-direction: column;
+        b {
+          margin-bottom: .25em;
+        }
+      }
+    }
+    input, select, textarea {
+      outline: none;
+      border: none;
+      background: transparent;
+      color: inherit;
+      flex-grow: 1;
+      min-width: 50px;
+      border: 1px solid;
+      border-radius: .5em;
+      padding: .5em;
+    }
+    button {
+      background: @btn_bkg_gradient;
+      border: none;
+      box-shadow: @btn_shadow;
+      border-radius: .25em;
+      cursor: pointer;
+      color: white;
+      padding: .75em 2em;
+      font-weight: bold;
+      // margin-top: .5em;
+      margin: .5em auto;
+      * {
+        filter: drop-shadow(0px 1px 1px #000);
+      }
+      &:hover {
+        background: @btn_bkg_gradient_hover;
+        box-shadow: @btn_shadow;
+      }
+    }
+  }
+}

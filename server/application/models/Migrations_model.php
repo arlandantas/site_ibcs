@@ -95,6 +95,30 @@ class Migrations_model extends CI_Model {
       ]);
       $this->set_current_version('0.2.1');
     }
+    if ($this->current_version < '0.3') {
+      $this->dbforge->add_field('id');
+      $this->dbforge->add_field("dthr DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP");
+      $this->dbforge->add_field([
+        'nome' => array(
+          'type' => 'TEXT',
+          'null' => FALSE
+        ),
+        'contato' => array(
+          'type' => 'TEXT',
+          'null' => TRUE
+        ),
+        'titulo' => array(
+          'type' => 'TEXT',
+          'null' => FALSE
+        ),
+        'conteudo' => array(
+          'type' => 'TEXT',
+          'null' => FALSE
+        ),
+      ]);
+      $this->dbforge->create_table('contatos', TRUE);
+      $this->set_current_version('0.3');
+    }
     return $this->current_version;
   }
 

@@ -100,6 +100,10 @@ export default class Home extends React.Component {
                   <span className="icon"><i className="fab fa-facebook-square"></i></span>
                   <span className="txt">facebook</span>
               </a>
+              <a className="btn contato" href="#/contato" target="_self" rel="noopener noreferrer">
+                  <span className="icon"><i className="fas fa-comment"></i></span>
+                  <span className="txt">fale conosco</span>
+              </a>
           </section>
           <section id="programacao">
               <div id="bkg"></div>

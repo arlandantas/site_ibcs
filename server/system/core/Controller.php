@@ -84,6 +84,7 @@ class CI_Controller {
 
 		if (ENVIRONMENT == 'development') {
 			// $this->load->library('output');
+			get_instance()->output->set_header('Access-Control-Allow-Headers: *');
 			get_instance()->output->set_header('Access-Control-Allow-Origin: *');
 		}
 
