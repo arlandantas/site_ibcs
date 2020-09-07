@@ -7,7 +7,7 @@ $config['smtp_port'] = $_ENV['EMAIL_PORT'];
 $config['protocol'] = $_ENV['EMAIL_PROTOCOL'];
 $config['newline'] = "\n";
 $config['crlf'] = "\n";
+$config['mailtype'] = 'html';
 
-// $config['mailtype'] = 'html';
 // $config['charset'] = 'iso-8859-1';
 // $config['wordwrap'] = 'TRUE';
