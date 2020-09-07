@@ -29,13 +29,12 @@ class Contatos extends CI_Controller {
 			"<b>Data: </b>".$date->format('d/m/Y à\s H:i:s')."<br/>".
 			"<b>Conteúdo: </b><br/>".str_replace("\n", "<br/>", $dados->conteudo);
 
-			// $this->load->library('email');
-			// $this->email->from('site@ibserodio.com.br', 'Contato Site');
-			// $this->email->to(isset($_ENV['FORM_CONTATO_EMAIL']) ? $_ENV['FORM_CONTATO_EMAIL'] : 'lanfsa@hotmail.com');
-			// $this->email->subject('[SITE] '.$dados->nome.' - '.$date->format('d/m/Y H:i:s'));
-			// $this->email->message($html_email);
-      // $this->email->send();
-      echo $html_email;
+			$this->load->library('email');
+			$this->email->from('site@ibserodio.com.br', 'Contato Site');
+			$this->email->to(isset($_ENV['FORM_CONTATO_EMAIL']) ? $_ENV['FORM_CONTATO_EMAIL'] : 'lanfsa@hotmail.com');
+			$this->email->subject('[SITE] '.$dados->nome.' - '.$date->format('d/m/Y H:i:s'));
+			$this->email->message($html_email);
+      $this->email->send();
 
 			echo "enviado!";
 		} else {
