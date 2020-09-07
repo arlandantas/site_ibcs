@@ -38,6 +38,7 @@
         <div id="desktop">
           <?php
           $menus = [
+            [ 'href' => '/admin/contatos', 'name' => 'Contatos' ],
             [ 'href' => '/admin/users', 'name' => 'Usuários' ],
             [ 'href' => '/admin/programacoes', 'name' => 'Programações' ],
             [ 'href' => '/logoff', 'name' => 'Sair' ],

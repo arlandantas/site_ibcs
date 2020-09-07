@@ -9,8 +9,9 @@ class Contato extends React.Component {
     this.state = {
       nome: '',
       contato: '',
-      titulo: '',
-      conteudo: ''
+      titulo: 'Quero ser membro',
+      conteudo: '',
+      enviando: false
     }
     this.handleInputChange = this.handleInputChange.bind(this);
     this.enviar = this.enviar.bind(this);
@@ -25,10 +26,16 @@ class Contato extends React.Component {
   }
   enviar (e) {
     e.preventDefault()
-    axios.post('/contato', this.state)
+    this.setState({ enviando: true })
+    axios.post('/contato', {
+      nome: this.state.nome,
+      titulo: this.state.titulo,
+      contato: this.state.contato,
+      conteudo: this.state.conteudo,
+    })
       .then(({ data }) => {
-        alert("Recebemos sua mensagem!\nEm breve entraremos em contato com você!")
-        this.setState({ conteudo: '' })
+        alert("Recebemos sua mensagem!\nEm breve entraremos em contato!")
+        this.setState({ conteudo: '', enviando: false })
       }).catch(e => {
         alert("Estamos com problemas!\nPor favor, tente novamente mais tarde!")
       })
@@ -40,13 +47,10 @@ class Contato extends React.Component {
           <div><b>Seu nome: </b> <input value={this.state.nome} onChange={this.handleInputChange} name="nome" /></div>
           <div><b>Seu contato: </b> <input value={this.state.contato} onChange={this.handleInputChange} name="contato" placeholder="Email ou Whatsapp" /></div>
           <div><b>Título: </b> <select value={this.state.titulo} onChange={this.handleInputChange} name="titulo">
-            <option>Quero ser membro</option>
-            <option>Sou visitante</option>
-            <option>O que achei da igreja</option>
-            <option>Outro assunto</option>
+            {['Quero ser membro', 'Sou visitante', 'O que achei da igreja', 'Outro assunto'].map(e => <option value={e} key={e}>{e}</option>)}
           </select></div>
           <div className="textarea"><b>Mensagem: </b> <textarea value={this.state.conteudo} onChange={this.handleInputChange} name="conteudo"></textarea></div>
-          <button type="submit" className="button" onClick={this.enviar}>Enviar</button>
+          <button type="submit" className="button" onClick={this.enviar} disabled={this.state.enviando}>Enviar</button>
         </form>
       </Navigation>
     );
